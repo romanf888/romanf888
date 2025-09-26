@@ -1,0 +1,371 @@
+/* Variables de couleur pour une personnalisation facile */
+:root {
+    --primary-color: #3498db; /* Bleu vibrant */
+    --background-color: #1a1d21; /* Fond très sombre */
+    --card-background: #23272f; /* Fond des cartes légèrement plus clair */
+    --text-color: #ecf0f1; /* Texte blanc cassé */
+    --text-muted: #95a5a6; /* Texte plus discret */
+    --navbar-height: 70px;
+}
+
+/* Réinitialisation de base et police */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--navbar-height);
+    padding: 0 5%;
+    /* MODIFICATION : Fond transparent avec effet de flou */
+    background-color: rgba(35, 39, 47, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* MODIFICATION : Style pour l'image du logo */
+.logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    transition: transform 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: rotate(360deg);
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+
+/* Burger menu pour mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Style des cartes */
+.card {
+    background-color: var(--card-background);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* AJOUT : Animation d'apparition */
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Header des pages */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x1080/1a1d21/1a1d21?text=') no-repeat center center/cover;
+    color: white;
+}
+
+.hero-content {
+     /* AJOUT : Animation d'apparition */
+    animation: slideUpFade 1s ease-out forwards;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--card-background);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+     /* AJOUT : Animation d'apparition */
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--card-background);
+    color: var(--text-muted);
+}
+
+/* ----- Styles spécifiques aux pages ----- */
+
+/* Blog */
+.blog-post .post-meta {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+.blog-post .post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover {
+    transform: translateX(5px);
+}
+
+/* Galerie Photos */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.photo-item {
+    /* AJOUT : Animation d'apparition */
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.photo-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* Critiques JV */
+.review-card {
+    display: flex;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* AJOUT : Animation d'apparition */
+    animation: slideUpFade 0.8s ease-out forwards;
+}
+.review-image img {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+.review-content {
+    padding: 20px 30px;
+    flex-grow: 1;
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.review-header h2 {
+    margin-bottom: 0;
+}
+.review-score {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.review-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+.review-content ul {
+    list-style-position: inside;
+    margin-bottom: 15px;
+}
+
+/* Mon Histoire */
+.about-me {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+.about-me-text {
+    flex: 1;
+}
+
+/* AJOUT : Définition de l'animation d'apparition */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .review-card {
+        flex-direction: column;
+    }
+    .review-image img {
+        width: 100%;
+        height: 250px;
+    }
+    .about-me {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: calc(100vh - var(--navbar-height));
+        top: var(--navbar-height);
+        background-color: var(--card-background);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
+        padding: 20px 0;
+    }
+    .burger {
+        display: block;
+    }
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
