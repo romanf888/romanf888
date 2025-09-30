@@ -9,12 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="critiques-page">
 
     <nav class="navbar">
         <div class="logo">
-            <!-- Remplacez ce lien par le chemin vers votre logo -->
-            <img src="https://placehold.co/50x50/eeeeee/1a1d21?text=L" alt="Logo" class="logo-img">
+            <img src="pictures/romanf888.PNG" alt="Logo" class="logo-img">
         </div>
         <ul class="nav-links">
             <li><a href="index.html" class="nav-link">Accueil</a></li>
@@ -30,72 +29,271 @@
         </div>
     </nav>
 
-    <header class="page-header">
-        <h1>Critiques de Jeux Vidéo</h1>
-    </header>
+    <main class="content-wrapper">
+        <header class="page-header">
+            <h1>Ma Bibliothèque de Critiques</h1>
+        </header>
 
-    <main class="container">
-        <!-- Exemple de critique -->
-        <div class="review-card">
-            <div class="review-image">
-                <img src="https://placehold.co/300x450/23272f/eeeeee?text=Jaquette+Jeu" alt="Jaquette du jeu">
-            </div>
-            <div class="review-content">
-                <div class="review-header">
-                    <h2>Nom du Jeu Fantastique</h2>
-                    <div class="review-score">18/20</div>
+        <div class="container">
+            <div class="controls-container card">
+                <input type="search" id="search-bar" placeholder="Rechercher un jeu par son titre...">
+                <div class="sort-container">
+                    <label for="sort-select">Trier par :</label>
+                    <select id="sort-select">
+                        <option value="default">Défaut</option>
+                        <option value="score-desc">Note (décroissante)</option>
+                        <option value="score-asc">Note (croissante)</option>
+                        <option value="alpha-asc">Ordre alphabétique (A-Z)</option>
+                    </select>
                 </div>
-                <p class="review-meta">Plateforme: PC, PS5, Xbox | Genre: RPG</p>
-                <p><strong>Les plus :</strong></p>
-                <ul>
-                    <li>Un univers incroyable et immersif</li>
-                    <li>Système de combat dynamique</li>
-                    <li>Une direction artistique à couper le souffle</li>
-                </ul>
-                <p><strong>Les moins :</strong></p>
-                <ul>
-                    <li>Quelques bugs techniques mineurs</li>
-                    <li>Une histoire principale un peu courte</li>
-                </ul>
-                <p class="review-summary">Un résumé de la critique. "Nom du Jeu Fantastique" est une aventure mémorable que tout fan de RPG se doit d'essayer. Malgré quelques défauts, l'expérience globale est exceptionnelle et vous tiendra en haleine pendant des dizaines d'heures...</p>
-                <a href="#" class="read-more">Lire la critique complète...</a>
+            </div>
+
+            <div id="game-library">
+                <!-- Jeu 1 -->
+                <div class="game-cover" 
+                     data-title="Fortnite" 
+                     data-score="15"
+                     data-stars="★★★★☆"
+                     data-image-src="pictures/Fortnite.png"
+                     data-tags-platform="PC, PS4, PS5, Xbox, Nintendo Switch, Nintendo Switch 2, Mobile"
+                     data-tags-genre="Battle Royale"
+                     data-criteria-graphismes="70"
+                     data-criteria-gameplay="60"
+                     data-criteria-bandeson="55"
+                     data-criteria-dureevie="100"
+                     data-publisher="Epic Games"
+                     data-storage="50 Go"
+                     data-verdict="Fortnite est un jeu de survie de zombie qui a atteint une popularité en 2017 avec l'arrivée du mode Battle Royale.">
+                    <img src="pictures/Fortnite.png" alt="Nom du Jeu Fantastique">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Starfield" 
+                     data-score="11"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://rare-gallery.com/mocahbig/5431978-starfield-video-game-planet-astronaut-game.jpg"
+                     data-tags-platform="Xbox, PC"
+                     data-tags-genre="FPS, TPS, RPG, Science-Fiction"
+                     data-criteria-graphismes="55"
+                     data-criteria-gameplay="60"
+                     data-criteria-bandeson="20"
+                     data-criteria-dureevie="40"
+                     data-publisher="Bethesda Game Studios, Xbox Game Studios"
+                     data-storage="125 Go"
+                     data-verdict="Starfield est un RPG de science-fiction développé par Bethesda Game Studios, offrant une exploration spatiale vaste mais souffrant de divers problèmes techniques et de manques de gameplay.">
+                    <img src="https://rare-gallery.com/mocahbig/5431978-starfield-video-game-planet-astronaut-game.jpg" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Halo Infinite" 
+                     data-score="13"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://pbs.twimg.com/media/EdmQirIXsAEMvBK.jpg:large"
+                     data-tags-platform="Xbox, PC"
+                     data-tags-genre="FPS, Science-Fiction"
+                     data-criteria-graphismes="80"
+                     data-criteria-gameplay="45"
+                     data-criteria-bandeson="50"
+                     data-criteria-dureevie="30"
+                     data-publisher="343 Industries, Xbox Game Studios"
+                     data-storage="80 Go"
+                     data-verdict="Halo Infinite est le retour du Master Chief, mais avec une campagne solo assez décevante et risquée, bien que le multijoueur reste assez correect.">
+                    <img src="https://pbs.twimg.com/media/EdmQirIXsAEMvBK.jpg:large" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Marvel's Spider-Man" 
+                     data-score="17"
+                     data-stars="★★★★☆"
+                     data-image-src="https://wallpapercat.com/w/full/e/2/4/309476-1080x1920-iphone-1080p-spider-man-wallpaper-photo.jpg"
+                     data-tags-platform="PS4, PS5, PC"
+                     data-tags-genre="Action, Aventure, Super-héros"
+                     data-criteria-graphismes="100"
+                     data-criteria-gameplay="80"
+                     data-criteria-bandeson="70"
+                     data-criteria-dureevie="80"
+                     data-publisher="Insomniac Games, Sony Interactive Entertainment"
+                     data-storage="90 Go"
+                     data-verdict="Vivez une aventure palpitante en incarnant Spider-Man dans un monde ouvert riche en détails et d'une campagne captivante.">
+                    <img src="https://wallpapercat.com/w/full/e/2/4/309476-1080x1920-iphone-1080p-spider-man-wallpaper-photo.jpg" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Marvel's Spider-Man Miles Morales" 
+                     data-score="15"
+                     data-stars="★★★★☆"
+                     data-image-src="https://i.redd.it/umdr89y7v6ja1.jpg"
+                     data-tags-platform="PS4, PS5, PC"
+                     data-tags-genre="Action, Aventure, Super-héros"
+                     data-criteria-graphismes="100"
+                     data-criteria-gameplay="65"
+                     data-criteria-bandeson="65"
+                     data-criteria-dureevie="50"
+                     data-publisher="Insomniac Games, Sony Interactive Entertainment"
+                     data-storage="70 Go"
+                     data-verdict="Une suite un peu decevante qui n'apporte pas grand-chose de nouveau, mais reste une aventure agréable à faire avec une campagne qui reste assez bonne.">
+                    <img src="https://i.redd.it/umdr89y7v6ja1.jpg" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Marvel's Spider-Man 2" 
+                     data-score="17"
+                     data-stars="★★★★☆"
+                     data-image-src="https://i.pinimg.com/736x/e2/03/04/e20304a72101fea1f7e24a9c68ed0e35.jpg"
+                     data-tags-platform="PS5, PC"
+                     data-tags-genre="Action, Aventure, Super-héros"
+                     data-criteria-graphismes="100"
+                     data-criteria-gameplay="75"
+                     data-criteria-bandeson="70"
+                     data-criteria-dureevie="85"
+                     data-publisher="Insomniac Games, Sony Interactive Entertainment"
+                     data-storage="100 Go"
+                     data-verdict="Une suite très réussie qui améliore tous les aspects du premier jeu, avec une histoire captivante et des mécaniques de jeu enrichies.">
+                    <img src="https://i.pinimg.com/736x/e2/03/04/e20304a72101fea1f7e24a9c68ed0e35.jpg" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Battlefield 2042" 
+                     data-score="13.5"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://wallpapers.com/images/hd/battlefield-2042-for-phone-cll058a2a3omy66m.jpg"
+                     data-tags-platform="PS4, PS5, Xbox, PC"
+                     data-tags-genre="FPS, Guerre"
+                     data-criteria-graphismes="70"
+                     data-criteria-gameplay="65"
+                     data-criteria-bandeson="50"
+                     data-criteria-dureevie="60"
+                     data-publisher="Electronic Arts, DICE"
+                     data-storage="75 Go"
+                     data-verdict="Battlefield 2042 propose une belle expérience multijoueurs, mais souffre de nombreux bugs et d'un manque de contenu à son lancement et d'une campagne solo inexistante.">
+                    <img src="https://wallpapers.com/images/hd/battlefield-2042-for-phone-cll058a2a3omy66m.jpg" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Star Wars Battlefront II (2005)" 
+                     data-score="16"
+                     data-stars="★★★★☆"
+                     data-image-src="https://a.allegroimg.com/original/11b27a/b8b0e9604f9ba1f3522117817222/STAR-WARS-Battlefront-II-Classic-2005-PC-STEAM-KLUCZ"
+                     data-tags-platform="PS2, Xbox, PC"
+                     data-tags-genre="FPS, TPS, Guerre, Science-Fiction"
+                     data-criteria-graphismes="60"
+                     data-criteria-gameplay="90"
+                     data-criteria-bandeson="90"
+                     data-criteria-dureevie="55"
+                     data-publisher="Pandemic Studios, LucasArts"
+                     data-storage="7 Go"
+                     data-verdict="Un jeu de tir à la première et troisième personne qui capture l'essence de l'univers Star Wars avec des batailles épiques, mais qui peut sembler daté pour les nouveaux joueurs.">
+                    <img src="https://a.allegroimg.com/original/11b27a/b8b0e9604f9ba1f3522117817222/STAR-WARS-Battlefront-II-Classic-2005-PC-STEAM-KLUCZ" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Just Cause" 
+                     data-score="13"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://www.gamespot.com/a/uploads/scale_medium/mig/7/9/3/3/2217933-box_jcause.png"
+                     data-tags-platform="PS2, Xbox, Xbox 360, PC"
+                     data-tags-genre="Action, Aventure, Monde Ouvert"
+                     data-criteria-graphismes="40"
+                     data-criteria-gameplay="50"
+                     data-criteria-bandeson="50"
+                     data-criteria-dureevie="30"
+                     data-publisher="Eidos Interactive, Square Enix"
+                     data-storage="6 Go"
+                     data-verdict="Just Cause est un jeu d'action-aventure en monde ouvert qui offre une grande liberté et des explosions spectaculaires, mais souffre de problèmes techniques et d'une histoire peu engageante.">
+                    <img src="https://www.gamespot.com/a/uploads/scale_medium/mig/7/9/3/3/2217933-box_jcause.png" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Aventure Pixelisée" 
+                     data-score="15"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://placehold.co/300x450/23272f/eeeeee?text=Aventure+Pixel"
+                     data-tags-platform="Switch, PC"
+                     data-tags-genre="Plateforme, Indé"
+                     data-criteria-graphismes="70"
+                     data-criteria-gameplay="85"
+                     data-criteria-bandeson="80"
+                     data-criteria-dureevie="65"
+                     data-publisher="Dev Rétro"
+                     data-storage="2 Go"
+                     data-verdict="Un vibrant hommage aux jeux de l'ère 8-bits qui séduira les nostalgiques, mais sa difficulté pourra en rebuter certains.">
+                    <img src="https://placehold.co/300x450/23272f/eeeeee?text=Aventure+Pixel" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Aventure Pixelisée" 
+                     data-score="15"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://placehold.co/300x450/23272f/eeeeee?text=Aventure+Pixel"
+                     data-tags-platform="Switch, PC"
+                     data-tags-genre="Plateforme, Indé"
+                     data-criteria-graphismes="70"
+                     data-criteria-gameplay="85"
+                     data-criteria-bandeson="80"
+                     data-criteria-dureevie="65"
+                     data-publisher="Dev Rétro"
+                     data-storage="2 Go"
+                     data-verdict="Un vibrant hommage aux jeux de l'ère 8-bits qui séduira les nostalgiques, mais sa difficulté pourra en rebuter certains.">
+                    <img src="https://placehold.co/300x450/23272f/eeeeee?text=Aventure+Pixel" alt="Aventure Pixelisée">
+                </div>
+
+                <div class="game-cover" 
+                     data-title="Aventure Pixelisée" 
+                     data-score="15"
+                     data-stars="★★★☆☆"
+                     data-image-src="https://placehold.co/300x450/23272f/eeeeee?text=Aventure+Pixel"
+                     data-tags-platform="Switch, PC"
+                     data-tags-genre="Plateforme, Indé"
+                     data-criteria-graphismes="70"
+                     data-criteria-gameplay="85"
+                     data-criteria-bandeson="80"
+                     data-criteria-dureevie="65"
+                     data-publisher="Dev Rétro"
+                     data-storage="2 Go"
+                     data-verdict="Un vibrant hommage aux jeux de l'ère 8-bits qui séduira les nostalgiques, mais sa difficulté pourra en rebuter certains.">
+                    <img src="https://placehold.co/300x450/23272f/eeeeee?text=Aventure+Pixel" alt="Aventure Pixelisée">
+                </div>
             </div>
         </div>
-        
-        <!-- Autre critique -->
-         <div class="review-card">
-            <div class="review-image">
-                <img src="https://placehold.co/300x450/23272f/eeeeee?text=Jaquette+Jeu+2" alt="Jaquette du jeu 2">
-            </div>
-            <div class="review-content">
-                <div class="review-header">
-                    <h2>Aventure Pixelisée</h2>
-                    <div class="review-score">15/20</div>
-                </div>
-                <p class="review-meta">Plateforme: Switch, PC | Genre: Plateforme, Indé</p>
-                <p><strong>Les plus :</strong></p>
-                <ul>
-                    <li>Un charme rétro assumé</li>
-                    <li>Un challenge relevé</li>
-                    <li>Bande-son entraînante</li>
-                </ul>
-                <p><strong>Les moins :</strong></p>
-                <ul>
-                    <li>Difficulté parfois frustrante</li>
-                    <li>Durée de vie assez courte</li>
-                </ul>
-                <p class="review-summary">"Aventure Pixelisée" est un vibrant hommage aux jeux de plateforme de l'ère 8-bits. Il saura séduire les nostalgiques et les amateurs de défis corsés, mais sa difficulté pourra en rebuter certains...</p>
-                <a href="#" class="read-more">Lire la critique complète...</a>
-            </div>
-        </div>
-
     </main>
+    
+    <div id="review-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image"><img id="modal-img" src="" alt="Jaquette du jeu"></div>
+                <div class="modal-details">
+                    <div class="review-header">
+                        <h2 id="modal-title"></h2>
+                        <div id="modal-score" class="review-score"></div>
+                    </div>
+                    <div id="modal-stars" class="star-rating"></div>
+                    <div id="modal-tags" class="review-tags"></div>
+                    
+                    <div class="review-meta">
+                        <p><strong>Éditeur :</strong> <span id="modal-publisher"></span></p>
+                        <p><strong>Stockage requis :</strong> <span id="modal-storage"></span></p>
+                    </div>
+
+                    <div class="review-details">
+                        <div class="criteria"><span>Graphismes</span> <div class="progress-bar"><div id="modal-progress-graphismes" class="progress"></div></div></div>
+                        <div class="criteria"><span>Gameplay</span> <div class="progress-bar"><div id="modal-progress-gameplay" class="progress"></div></div></div>
+                        <div class="criteria"><span>Bande-son</span> <div class="progress-bar"><div id="modal-progress-bandeson" class="progress"></div></div></div>
+                        <div class="criteria"><span>Durée de vie</span> <div class="progress-bar"><div id="modal-progress-dureevie" class="progress"></div></div></div>
+                    </div>
+                    <div class="review-verdict">
+                        <p><strong>Verdict :</strong> <span id="modal-verdict"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 - Votre Nom. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
 
